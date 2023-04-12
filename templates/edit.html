@@ -1,0 +1,50 @@
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit {{ filename }}</title>
+    </head>
+<body>
+
+
+
+    <body>
+        <h1>Edit {{ filename }} <a href="{{ url_for('list') }}"><button>list</button></a></h1>
+        <form method="POST">
+            <textarea id="editor" contenteditable="true" spellcheck="false" name="new_contents">{{ contents }}</textarea>
+            <br>
+            <input type="submit" value="Save">
+        </form>
+
+</body>
+</html>
+<style>
+
+#editor {
+	height: 800px;
+    width: 100%;
+	border: 1px solid #ccc;
+	padding: 10px;
+	background-color: #000;
+	color: #fff;
+	font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+
+}
+
+#editor::selection {
+	background-color: #0066FF;
+	color: #fff;
+}
+</style>
+
+<script>
+var editor = document.getElementById("editor");
+
+editor.contentEditable = true;
+editor.spellcheck = false;
+</script>

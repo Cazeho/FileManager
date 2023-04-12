@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ filename }}</title>
+</head>
+<body>
+    <h1>Read {{ filename }} <a href="{{ url_for('edit_file', filename=filename) }}"><button>edit</button></a> <a href="{{ url_for('list') }}"><button>list</button></a></h1>
+    <textarea id="editor" readonly>{{ contents }}</textarea>
+
+</body>
+</html>
+
+<style>
+
+    #editor {
+        height: 850px;
+       width: 90%;
+        border: 1px solid #ccc;
+        padding: 10px;
+        background-color: #000;
+        color: #fff;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 18px;
+    }
+    
+    #editor::selection {
+        background-color: #0066FF;
+        color: #fff;
+    }
+    </style>
+    
+    <script>
+    var editor = document.getElementById("editor");
+    
+    editor.contentEditable = false;
+    editor.spellcheck = false;
+
+
+    </script>

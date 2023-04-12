@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Upload de fichier</title>
+    </head>
+    <body>
+        <h1>Upload de fichier</h1>
+
+        <h2>Local Upload</h2>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="submit" value="Upload">
+        </form>
+        <br>
+        <h2>Remote Upload</h2>
+        <br>
+        <a href="{{ url_for('list') }}"><button>liste des fichiers</button></a>
+    </body>
+</html>
