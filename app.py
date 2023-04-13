@@ -55,9 +55,9 @@ def upload_file():
             return 'No selected file'
 
         
-
+        
         # If file is selected, save it
-        file.save(file.filename)
+        file.save(config['configuration']['file_path']+"/"+file.filename)
         return 'File uploaded successfully'
 
     
