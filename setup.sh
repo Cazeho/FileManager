@@ -6,9 +6,9 @@ cd /opt/
 git clone https://github.com/Cazeho/FileManager.git
 cd FileManager
 pip install -r rq.txt
-chmod +x app.py
+chmod +x run.sh
 chmod +x reload.sh
 
-ln -s $PWD/app.py /usr/local/bin/filemanager
+ln -s $PWD/run.sh /usr/local/bin/filemanager
 
 filemanager
