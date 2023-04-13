@@ -73,7 +73,7 @@ def list():
     files = []
     for root, directories, filenames in os.walk(path):
         for filename in filenames:
-            files.append(os.path.join(root, filename))
+            files.append(os.path.join(root.replace(path,""),filename))
 
 
 
