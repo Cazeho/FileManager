@@ -178,6 +178,7 @@ def install():
         config['login']['username'] = username
         config['configuration']['secret_app']= generate_secret()
         config['configuration']['file_path'] = path
+        subprocess.run(["mkdir", "-p", path])
         with open('config.yaml', 'w') as f:
             yaml.dump(config, f)
         subprocess.run(['bash', "reload.sh"])
