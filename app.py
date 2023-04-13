@@ -109,12 +109,14 @@ def read_file(filename):
     if not session.get('logged_in'):
         return redirect(url_for('login'))
     # Check if file exists
-    if not os.path.isfile(filename):
+    path = config['configuration']['file_path']
+    file_path = os.path.join(path, filename)
+    if not os.path.isfile(file_path):
         return 'File does not exist'
 
 
     # Read the contents of the file
-    with open(filename, 'r') as f:
+    with open(file_path, 'r') as f:
         contents = f.read()
 
     
