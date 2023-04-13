@@ -5,6 +5,7 @@ import sys
 import secrets
 import base64
 import subprocess
+import pwd
 
 app = Flask(__name__)
 
@@ -160,7 +161,7 @@ def get_home_dir():
 def linux():
     if sys.platform.startswith('linux'):
         import pwd
-        return get_home_dir()+"upload"
+        return get_home_dir()+"/upload"
 
 @app.route('/config', methods=['GET', 'POST'])
 def install():
