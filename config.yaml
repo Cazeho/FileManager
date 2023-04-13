@@ -1,7 +1,7 @@
 configuration:
   file_path: .
   install: 0
-  port: 8080
+  port: 5000
   bind: 0.0.0.0
   secret_app: 2uqHmiyKkV6sofqXOsN+uA==
 login:
