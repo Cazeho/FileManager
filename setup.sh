@@ -6,6 +6,7 @@ cd /opt/
 git clone https://github.com/Cazeho/FileManager.git
 cd FileManager
 chmod +x app.py
+chmod +x reload.sh
 
 ln -s $PWD/app.py /usr/local/bin/filemanager
 
