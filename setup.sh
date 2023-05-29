@@ -2,7 +2,7 @@
 
 # installation de FileManager
 
-apt install python3-pip
+apt install python3-pip -y
 pip install flask
 
 cd /opt/
