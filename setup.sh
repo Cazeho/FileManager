@@ -2,6 +2,7 @@
 
 # installation de FileManager
 
+apt update
 apt install python3-pip -y
 
 cd /opt/
