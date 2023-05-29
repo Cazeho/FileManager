@@ -2,6 +2,9 @@
 
 # installation de FileManager
 
+apt install python3-pip
+pip install flask
+
 cd /opt/
 git clone https://github.com/Cazeho/FileManager.git
 cd FileManager
