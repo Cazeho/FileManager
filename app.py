@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, session, redirect, url_for
+from flask import Flask, request, render_template, session, redirect, url_for, send_file
 import yaml
 import os
 import sys
@@ -80,7 +80,18 @@ def list():
     return render_template('list_files.html', files=files)
 
 
+@app.route('/download/<filename>', methods=['GET'])
+def download_file(filename):
+    if not session.get('logged_in'):
+        return redirect(url_for('login'))
 
+    path = config['configuration']['file_path']
+    file_path = os.path.join(path, filename)
+
+    if not os.path.isfile(file_path):
+        return 'File does not exist'
+
+    return send_file(file_path, as_attachment=True)
 
 
 @app.route('/login', methods=['GET', 'POST'])
